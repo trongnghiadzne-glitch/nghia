@@ -1,0 +1,20 @@
+<script>
+let score = 0;
+function jumpscare(){
+  document.body.style.background = "red";
+  document.body.innerHTML += '<div style="position:fixed;top:0;left:0;width:100%;height:100%;background:url(https://i.imgur.com/8QfNzZp.png) center/cover;z-index:999"></div>';
+  new Audio('https://www.soundjay.com/mechanical/sounds/scream-1.mp3').play();
+  setTimeout(()=> location.reload(), 1500); // 1.5s sau load lại
+}
+
+function check(ans){
+  const dung = [3,6,7,8,9];
+  if(dung.includes(ans)){
+    score++;
+    alert("🎃 ĐÚNG RỒI! Nghĩa dzai nhất vũ trụ +1 điểm");
+  } else {
+    jumpscare(); // SAI LÀ BỊ HÙ
+  }
+  if(score==3) setTimeout(()=>alert("Chúc mừng! Bạn qua ải ma Nghĩa dzai 😎"), 500);
+}
+</script>
